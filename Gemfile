@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use HAML as the markup language
 gem 'haml-rails'
 
+# Use Twitter Bootstrap
+gem 'bootstrap-sass'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
