@@ -1,4 +1,8 @@
 RailsClassWebsite::Application.routes.draw do
+  get "blogposts/new"
+  get "blogposts/edit"
+  get "blogposts/view"
+  get "blogposts/index"
   devise_for :users
   get "user/new"
   get "user/edit"
