@@ -1,15 +1,12 @@
 RailsClassWebsite::Application.routes.draw do
-  get "blogposts/new"
-  get "blogposts/edit"
-  get "blogposts/view"
-  get "blogposts/index"
   devise_for :users
-  get "user/new"
-  get "user/edit"
-  get "user/view"
-  get "user/index"
+  resources :users
+
+  resources :blogposts
   get "pages/home"
   get "pages/schedule"
+
+  root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -50,7 +47,7 @@ RailsClassWebsite::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
