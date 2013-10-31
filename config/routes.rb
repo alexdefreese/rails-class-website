@@ -1,4 +1,8 @@
 RailsClassWebsite::Application.routes.draw do
+  get "blog/index"
+  get "blog/view"
+  get "blog/new"
+  get "blog/edit"
   get "pages/home"
   get "pages/schedule"
   # The priority is based upon order of creation: first created -> highest priority.
