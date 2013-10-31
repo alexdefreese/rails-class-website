@@ -9,6 +9,9 @@ gem 'haml-rails'
 # Use Twitter Bootstrap
 gem 'bootstrap-sass'
 
+# Use Devise for User Authentication
+gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

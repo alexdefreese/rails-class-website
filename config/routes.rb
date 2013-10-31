@@ -1,4 +1,9 @@
 RailsClassWebsite::Application.routes.draw do
+  devise_for :users
+  get "user/new"
+  get "user/edit"
+  get "user/view"
+  get "user/index"
   get "pages/home"
   get "pages/schedule"
   # The priority is based upon order of creation: first created -> highest priority.
