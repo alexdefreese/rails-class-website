@@ -1,0 +1,10 @@
+%header.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    .container
+      #logo= link_to "ruby class", root_path
+      %nav
+        %ul.nav.pull-right
+          %li= link_to "Home", root_path
+          %li= link_to "Assignments", "#"
+          %li= link_to "Schedule", 'pages/schedule'
+          - if signed_in
