@@ -8,7 +8,7 @@ class BlogpostsController < ApplicationController
   end
 
   def create
-    if current_user.blogposts.build params[:blogpost]
+    if current_user.blogposts.create blogpost_params
       flash[:success] = "Created New Blogpost"
       redirect_to root_path
     else
@@ -22,7 +22,7 @@ class BlogpostsController < ApplicationController
 
   def update
     @blogpost = Blogpost.find(params[:id])
-    if @blogpost.update_attributes(user_params)
+    if @blogpost.update_attributes(blogpost_params)
       flash[:success] = "Edited Blogpost"
       redirect_to @blogpost
     else
@@ -37,4 +37,9 @@ class BlogpostsController < ApplicationController
   def index
     @blogposts = Blogpost.all
   end
+
+  private
+    def blogpost_params
+      params.require(:blogpost).permit(:title, :body)
+    end
 end
