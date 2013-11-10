@@ -1,2 +1,10 @@
-%h1 Blogposts#new
-%p Find me in app/views/blogposts/new.html.haml
+%h1 New Blogpost
+
+= form_for @blogpost do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title
+  .form-group
+    = f.label :body
+    = f.text_area :body
+  = f.submit "Create New Blogpost", class: 'btn btn-large btn-primary'

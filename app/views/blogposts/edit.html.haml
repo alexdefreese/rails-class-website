@@ -1,2 +1,9 @@
-%h1 Blogposts#edit
-%p Find me in app/views/blogposts/edit.html.haml
+%h1 Edit Blogpost
+= form_for @blogpost do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title
+  .form-group
+    = f.label :body
+    = f.text_area :body
+  = f.submit "Submit Edits", class: 'btn btn-large btn-primary'

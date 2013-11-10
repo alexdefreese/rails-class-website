@@ -1,0 +1,14 @@
+.blogpost
+  %span.title-row
+    .title= @blogpost.title
+    .author
+      By
+      = link_to @blogpost.user.email, @blogpost.user
+
+  .body= @blogpost.body
+
+  .footer
+    .date
+      Created
+      = time_ago_in_words @blogpost.created_at
+      ago.

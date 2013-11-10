@@ -1,2 +1,16 @@
-%h1 Blogposts#index
-%p Find me in app/views/blogposts/index.html.haml
+%h1 Rails Class
+
+- if user_signed_in? and current_user.admin?
+  .new-blogpost-button= link_to "New Blogpost", new_blogpost_path, class: "btn btn-primary"
+.blog-list
+  %ul
+    - for blogpost in @blogposts
+      %li.blogpost
+        %span.title-row
+          .title= blogpost.title
+          .author
+            By
+            = link_to blogpost.user.email, blogpost.user
+          .edit= link_to "Edit", edit_blogpost_path(blogpost), class: "btn btn-primary"
+
+        .body= blogpost.body
