@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
 
-  before_filter :authenticat_user!,
+  before_filter :authenticate_user!,
     only: [:new, :create, :edit, :update, :destroy]
 
   def new
@@ -30,7 +30,7 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  def view
+  def show
     @blogpost = Blogpost.find(params[:id])
   end
 

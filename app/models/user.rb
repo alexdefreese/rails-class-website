@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessor :name
-
   has_many :blogposts
+
+  def admin?
+    return admin
+  end
 end
