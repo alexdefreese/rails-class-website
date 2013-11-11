@@ -7,7 +7,7 @@
     - for blogpost in @blogposts
       %li.blogpost
         %span.title-row
-          .title= blogpost.title
+          .title= link_to blogpost.title, blogpost
           .author
             By
             = link_to blogpost.user.email, blogpost.user
