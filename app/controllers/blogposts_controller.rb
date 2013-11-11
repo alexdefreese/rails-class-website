@@ -32,6 +32,8 @@ class BlogpostsController < ApplicationController
 
   def show
     @blogpost = Blogpost.find(params[:id])
+    @comments = Comment.all
+    @new_comment = Comment.new
   end
 
   def index

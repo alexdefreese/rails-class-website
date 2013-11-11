@@ -12,3 +12,17 @@
       Created
       = time_ago_in_words @blogpost.created_at
       ago.
+
+.comments-area
+  .title Comments
+  .new-comment
+    = form_for ([@blogpost, @new_comment]) do |f|
+      = f.text_area :comment
+      = f.submit "Submit", class: 'btn btn-primary btn-medium'
+
+  %ul.comments
+    - @comments.each do |comment|
+      %li.comment
+        .author= comment.user.email
+        .comment= comment.comment
+

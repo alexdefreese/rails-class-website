@@ -2,7 +2,9 @@ RailsClassWebsite::Application.routes.draw do
   devise_for :users
   resources :users
 
-  resources :blogposts
+  resources :blogposts do
+    resources :comments
+  end
   get "pages/home"
   get "pages/schedule"
 
